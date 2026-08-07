@@ -262,7 +262,7 @@ export default function App() {
     const interval = setInterval(() => {
       fetchAndDetect();
       fetchLiveMenu();
-    }, 8000);
+    }, 12000);
     return () => clearInterval(interval);
   }, []);
 
