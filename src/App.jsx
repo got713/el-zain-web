@@ -216,7 +216,7 @@ export default function App() {
       const prevCount = prevOrderCountRef.current;
 
       try {
-        const response = await fetch(`${FIRESTORE_BASE}/orders`);
+        const response = await fetch(`${FIRESTORE_BASE}/orders?pageSize=15`);
         if (response.ok) {
           const data = await response.json();
           const documents = data.documents || [];
@@ -262,7 +262,7 @@ export default function App() {
     const interval = setInterval(() => {
       fetchAndDetect();
       fetchLiveMenu();
-    }, 12000);
+    }, 18000);
     return () => clearInterval(interval);
   }, []);
 
